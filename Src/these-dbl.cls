@@ -218,7 +218,7 @@
 %%%%%%%%%%%%%%%% VARIABLES PAGE DE GARDE %%%%%%%%%%%%%%%%
 
 %%%%% Dossier contenant les info de l'ecole doctorale
-\newcommand*{\direcole}[1]{\gdef\vdirecole{./Couverture-these/ecoles-doctorales/#1}}
+\newcommand*{\direcole}[1]{\gdef\vdirecole{./00-Couverture-these/ecoles-doctorales/#1}}
 \direcole{}
 
 %%%%% Nom ecole, une variable par ligne
@@ -312,24 +312,24 @@
       {\ifthenelse{\equal{\vlogoetablissementA}{}\and\equal{\vlogoetablissementB}{UR1-noir}}{
         $\vcenter{\hbox{%
           \includegraphics[keepaspectratio,height=\vhauteurlogoetablissementB,width=7cm
-          ]{./Couverture-these/logos-etablissements/\vlogoetablissementB}%
+          ]{./00-Couverture-these/logos-etablissements/\vlogoetablissementB}%
         }}$
       }{%
         $\vcenter{\hbox{%
-          \includegraphics[keepaspectratio,height=\vhauteurlogoecole,%width=7cm
+          \includegraphics[keepaspectratio,height=\vhauteurlogoecole,width=7cm
           ]{\vdirecole/logo}%
         }}$
         \hfill
         {\if\vlogoetablissementA\empty \else
           $\vcenter{\hbox{%
             \includegraphics[keepaspectratio,height=\vhauteurlogoetablissementA,width=7cm
-            ]{./Couverture-these/logos-etablissements/\vlogoetablissementA}%
+            ]{./00-Couverture-these/logos-etablissements/\vlogoetablissementA}%
           }}$
         \fi}%
         \hspace{3mm}
         $\vcenter{\hbox{%
           \includegraphics[keepaspectratio,height=\vhauteurlogoetablissementB,width=7cm
-          ]{./Couverture-these/logos-etablissements/\vlogoetablissementB}%
+          ]{./00-Couverture-these/logos-etablissements/\vlogoetablissementB}%
         }}$
       }}%
     }%
@@ -348,11 +348,11 @@
     \put(0,0){%
     \parbox[b][42.6cm]{\paperwidth}{%
         
-%        \includegraphics[width=\paperwidth,keepaspectratio,trim={0 5pt 0 0}]{\vdirecole/image-fond-garde.png} % Must trim white border off of bottom
+%        \includegraphics[width=\paperwidth,keepaspectratio,trim={0 5pt 0 0}]{\vdirecole/image-fond-garde} % Must trim white border off of bottom
 %        \begin{tikzpicture}
 %            \fill[couleur-ecole-recto] (0,0) rectangle (\paperwidth,4.4);
 %        \end{tikzpicture}
-		\input{./Couverture-these/cover_tikz}
+		\input{./00-Couverture-these/cover_tikz}
     \vspace{10cm}
   }}}
   \displayLogos
@@ -434,7 +434,7 @@
 	\put(0,0){%
 	\parbox[t][\paperheight]{\paperwidth}{%
         \vspace{-33.1cm}
-		\input{./Couverture-these/backcover_tikz}
+		\input{./00-Couverture-these/backcover_tikz}
 	}}
 }
 \hspace{9mm}

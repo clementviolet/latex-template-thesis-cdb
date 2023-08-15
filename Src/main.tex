@@ -15,13 +15,13 @@
 
 % Spécifier vos fichiers de bibliographie
 % Specify you bibliography files here
-\addbibresource{./biblio/biblio.bib}
+\addbibresource{./biblio.bib}
 
 \begin{document}
 
 % Page de garde avec commande \maketitle
 % Front cover calling \maketitle
-\input{./Couverture-these/pagedegarde}
+\input{./00-Couverture-these/pagedegarde}
 
 % Sélectionner la langue du contenu suivant cette ligne
 % Select the content language following this line
@@ -30,7 +30,7 @@
 % Inclusion du chapitre remerciement
 % Input acknowledgement chapter
 \clearemptydoublepage
-\input{./Acknowledgement/acknowledgement}
+\input{./01-Acknowledgement/acknowledgement}
 
 % Ne pas oublier cette commande qui g\'{e}n\`{e}re la page de couverture avant
 % This command will generate the front cover
@@ -41,26 +41,26 @@
 %\shorttableofcontents{Sommaire}{0}
 
 \clearemptydoublepage
-\input{./Introduction/introduction}
+\input{./02-Introduction/introduction}
 
 \clearemptydoublepage
 \mainmatter
 \begin{refsection}
-\input{./Chapitre1/chapitre1}
+\input{./03-Chapitre1/chapitre1}
 \addcontentsline{toc}{section}{Bibliographie}
 \printbibliography[heading=subbibliography, title={Bibliographie}]
 \end{refsection}
 
 \clearemptydoublepage
 \begin{refsection}
-\input{./Chapitre2/chapitre2}
+\input{./03-Chapitre2/chapitre2}
 \addcontentsline{toc}{section}{Bibliographie}
 \printbibliography[heading=subbibliography, title={Bibliographie}]
 \end{refsection}
 
 \clearemptydoublepage
 \begin{refsection}
-\input{./Chapitre3/chapitre3}
+\input{./03-Chapitre3/chapitre3}
 \addcontentsline{toc}{section}{Bibliographie}
 \printbibliography[heading=subbibliography, title={Bibliographie}]
 \end{refsection}
@@ -68,7 +68,7 @@
 
 \clearemptydoublepage
 \backmatter
-\input{./Conclusion/conclusion}
+\input{./04-Conclusion/conclusion}
 
 % Chapitre pour la bibliographie
 % Bibliography chapter
@@ -85,6 +85,6 @@
 % Pour avoir la quatrième de couverture sur une page paire
 % To have the back cover on an even page
 \cleartoevenpage[\thispagestyle{empty}]
-\input{./Couverture-these/resume}
+\input{./00-Couverture-these/resume}
 
 \end{document}
