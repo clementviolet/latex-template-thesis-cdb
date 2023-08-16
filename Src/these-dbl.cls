@@ -503,7 +503,8 @@
 \RequirePackage{geometry}
 \RequirePackage{etoolbox}
 
-\appto\frontmatter{\pagestyle{fancy}
+\appto\frontmatter{\pagenumbering{roman}
+\pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
 \fancyhead[LE,RO]{\small\thepage}
@@ -512,7 +513,8 @@
     \fancyfoot[C]{\thepage}               % marque la page au centre
 }
 
-\appto\mainmatter{\pagestyle{fancy}
+\appto\mainmatter{\pagenumbering{arabic}
+\pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\textit{\thesection.\ #1}}}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername~\thechapter~--\ \textit{#1}}{}}
 \fancyhead[LE,RO]{\small\thepage}

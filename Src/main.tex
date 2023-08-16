@@ -18,7 +18,7 @@
 \addbibresource{./biblio.bib}
 
 \begin{document}
-
+\pagenumbering{gobble}
 % Page de garde avec commande \maketitle
 % Front cover calling \maketitle
 \input{./00-Couverture-these/pagedegarde}
@@ -30,22 +30,25 @@
 % Inclusion du chapitre remerciement
 % Input acknowledgement chapter
 \clearemptydoublepage
+\pagenumbering{gobble}
 \input{./01-Acknowledgement/acknowledgement}
 
+\clearemptydoublepage
 % Ne pas oublier cette commande qui g\'{e}n\`{e}re la page de couverture avant
 % This command will generate the front cover
 \frontmatter
-\clearemptydoublepage
 \renewcommand{\contentsname}{Table of Contents}
 \tableofcontents %sommaire %table of content
 %\shorttableofcontents{Sommaire}{0}
 
 \clearemptydoublepage
-\input{./02-Introduction/introduction}
-
-\clearemptydoublepage
 \mainmatter
+\clearemptydoublepage
+\input{./02-Introduction/introduction}
+\clearemptydoublepage
+
 \begin{refsection}
+\clearemptydoublepage
 \input{./03-Chapitre1/chapitre1}
 \addcontentsline{toc}{section}{Bibliographie}
 \printbibliography[heading=subbibliography, title={Bibliographie}]
