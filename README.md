@@ -2,12 +2,12 @@ Convertion partiel du modèle LaTeX de manuscript de thèse du Collège doctoral
 
 L'essentiel de la template fonctionne avec pandoc, malgré cela il reste à implémenter ou à trouver des solutions pour certaines partie de la template.
 
-- [] Métadonnées
-- [] Couverture
+- [ ] Métadonnées
+- [ ] Couverture
 - [X] Introduction
 - [X] Chapitre 1 à Chapitre 3
 - [X] Conclusion
-- [] Quatrième de couverture
+- [ ] Quatrième de couverture
 
 ---
 
@@ -41,55 +41,28 @@ Modifier la disposition des éléments de la page de garde présente dans `these
 
 Les variables relatives à la quatrième de couverture sont à renseigner dans `Couverture-these/resume.tex`.
 
-
-### Dépendances
-
-Une distribution LaTeX comme texlive est nécessaire pour compiler le document. À noter que certains paquets nécessaires à ce document ne sont pas toujours directement inclus dans une installation de base de texlive.
-
-Paquets additionnels nécessaires :
-
-- Fedora (installer avec `dnf install`)
-	- texlive-abstract
-	- texlive-wallpaper
-- Autres distributions
-	- TODO (contributions bienvenues)
-
-
 ### Compiler le latex en pdf
 
-Le `Makefile` fournis vous aide à compiler votre document.
-Il utilise `pdflatex` et `biber` pour générer le fichier pdf et peut l'afficher grâce à `evince` sur Linux et `open` sur MacOS.
+Le `compilation.sh` fournis vous aide à compiler votre document vers différents formats de sortie via `pandoc`.
+Il utilise `pdflatex` et `biber` pour générer le fichier pdf.
 
-Compiler votre document (version locale) avec `pdflatex/biber` :
+Compiler votre document en `pdf` avec `pdflatex/biber` :
 
-    make
+    bash test.sh pdf
 
-Compiler la version complète du document (incluant les sections masquées)
+Compiler votre document (version locale) pour `Microsoft Word` :
 
-	make full
+    bash test.sh docx standalone
 
-Afficher le pdf généré :
+Compiler uniquement un chapitre de thèse pour `Microsoft Word` :
 
-    make viewpdf
+	bash test.sh docx chapitre 1
 
-Suppimer tous les fichiers générés, pdf inclus :
+Compiler plusieures partie de la thèse à la fois pour `Microsoft Word` :
 
-    make clean
+	bash test.sh docx introduction chapitre3
 
-
-### CI/CD (Gitlab)
-
-Il est possible de demander à gitlab de compiler automatiquement la version complète du manuscrit à chaque nouveau commit.
-Il faut effectuer les actions suivantes:
-
-
-- Settings -> General -> Visibility, project features, permissions -> Enable CI/CD
-- (Sur l'instance https://gitlab.com) Settings -> CI/CD -> Enable shared runners for this project
-
-Le document compilé sera disponible à cette URL: <repository url>-/jobs/artifacts/master/raw/main.pdf?job=building-latex-master
-
-Ex: https://gitlab.com/ed-matisse/latex-template/-/jobs/artifacts/master/raw/main.pdf?job=building-latex-master
-
+Tous les documents compilés sont dans le dossier `Rendered/`
 
 ### Spécificités d'un document multilingue
 
@@ -142,52 +115,28 @@ Modifying the front cover layout defined in `these-dbl.cls` should only be neces
 
 The back cover variables that must be filled are in `Couverture-these/resume.tex`.
 
-
-#### Dependencies
-
-A LaTeX distribution such as texlive is necessary in order to compile your document. Please note some necessary packages are not directly included in a base texlive installation.
-
-Required additional packages:
-
-- Fedora (install using `dnf install`)
-	- texlive-abstract
-	- texlive-wallpaper
-- Other distributions
-	- TODO (contributions welcome)
-
-
 #### Compile latex into pdf
 
-A `Makefile` is provided to help you compile your document. It uses `pdflatex` and`biber` to generate the pdf file and can display it by using `evince` on Linux or `open` on MacOS.
+The `compilation.sh` provided helps you compile your document to different output formats via `pandoc`.
+It uses `pdflatex` and `biber` to generate the pdf file.
 
-Compile your document (local version) with `pdflatex/biber`:
+Compile your document to `pdf` using `pdflatex/biber` :
 
-	make
+    bash test.sh pdf
 
-Compile the whole document (including section masked locally):
+Compile your document (local version) for `Microsoft Word` :
 
-	make full
+    bash test.sh docx standalone
 
-Display the generated pdf:
+Compile only one thesis chapter for `Microsoft Word` :
 
-	make viewpdf
+	bash test.sh docx chapter 1
 
-Remove all generated files, pdf included:
+Compile several parts of the thesis at once for `Microsoft Word` :
 
-	make clean
+	bash test.sh docx introduction chapter3
 
-#### CI/CD (Gitlab only)
-
-This repository is able to automatically compile the LaTeX document when a new change is submitted.
-To activate the auto compilation of the document:
-
-- Settings -> General -> Visibility, project features, permissions -> Enable CI/CD
-- (on the https://gitlab.com instance) Settings -> CI/CD -> Enable shared runners for this project
-
-The compiled document should be available at this URL: <repository url>-/jobs/artifacts/master/raw/main.pdf?job=building-latex-master
-
-Ex: https://gitlab.com/ed-matisse/latex-template/-/jobs/artifacts/master/raw/main.pdf?job=building-latex-master
-
+All compiled documents are in the `Rendered/` folder.
 
 #### Particularities of a multilanguage document
 
@@ -210,11 +159,11 @@ Currently the latex default font is the one used for the content.
 
 -----
 
-# ![(git logo)](https://yousername.gitlab.io/img/logo_git_50x50.png) Contribute
+# ![(git logo)](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png) Contribute
 
 Merge requests are very welcome.
 
-Maintainers: Pierre-Louis Roman (pierre-louis.roman@epfl.ch).
+Maintainers: Clément Violet (clement.violet[at]ifremer.fr).
 
 Contributors: Louiza Yala (original & main developer), Josquin Debaz, Pierre-Louis Roman, Lucas Bourneuf, Corentin Guezenoc, Clément Elbaz, Florian Arrestier, Alexandre Honorat, Antonin Voyez, Pierre Le Barbenchon, Arthur Lecert.
 
