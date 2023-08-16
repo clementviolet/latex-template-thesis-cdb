@@ -13,4 +13,7 @@
 *.run.xml
 *.synctex.gz
 *.toc
+*.lof
+*lot
 main.pdf
+*.DS_Store
