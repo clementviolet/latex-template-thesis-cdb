@@ -159,7 +159,7 @@ Currently the latex default font is the one used for the content.
 
 -----
 
-# ![(git logo)](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png) Contribute
+# Contribute
 
 Merge requests are very welcome.
 
